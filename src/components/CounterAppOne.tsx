@@ -5,10 +5,7 @@ const Counter = () => {
 
   return (
     <div>
-      <p>
-        Add by one each click <strong>APP-1</strong>
-      </p>
-      <p>Your click count: {count} </p>
+      <p>{count}</p>
       <button onClick={() => setCount(count + 1)}>Click me</button>
     </div>
   );

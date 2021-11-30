@@ -30,7 +30,7 @@ module.exports = {
       library: { type: "var", name: "drivers" },
       filename: "@d-Una",
       exposes: {
-        "./CounterAppOne": "./src/components/CounterAppOne",
+        "./": "./src/App",
       },
       shared: {
         ...deps,

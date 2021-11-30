@@ -3,7 +3,7 @@ import CounterAppOne from "./components/CounterAppOne";
 
 const App = () => (
   <div>
-    <div>Drivers app</div>
+    <div>Drivers</div>
     <div>
       <CounterAppOne />
     </div>
