@@ -26,9 +26,9 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "app1",
-      library: { type: "var", name: "app1" },
-      filename: "remoteEntry.js",
+      name: "drivers",
+      library: { type: "var", name: "drivers" },
+      filename: "@d-Una",
       exposes: {
         "./CounterAppOne": "./src/components/CounterAppOne",
       },
