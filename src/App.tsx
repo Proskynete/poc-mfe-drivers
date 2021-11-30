@@ -1,13 +1,15 @@
 import React from "react";
 import CounterAppOne from "./components/CounterAppOne";
 
-const App = () => (
-  <div>
-    <div>Drivers</div>
+const App = () => {
+  return (
     <div>
-      <CounterAppOne />
+      <div>Drivers</div>
+      <div>
+        <CounterAppOne />
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default App;
