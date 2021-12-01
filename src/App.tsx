@@ -1,7 +1,9 @@
 import React from "react";
 import CounterAppOne from "./components/CounterAppOne";
 
-const App = () => {
+const App = (props: any) => {
+  console.log(props);
+
   return (
     <div>
       <div>Drivers</div>
