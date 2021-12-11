@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CounterAppOne from "./components/CounterAppOne";
+import configureStore from "./store/storeConfig";
 
 const App = (props: any) => {
-  console.log(props);
+  const [counterAppState, setCounterAppState] = useState(null);
+
+  useEffect(() => {
+    const globalStore = configureStore(setCounterAppState);
+    setCounterAppState(globalStore.GetGlobalState().CounterApp);
+  }, []);
+
+  if (!counterAppState) return <>Loading...</>
 
   return (
     <div>
       <div>Drivers</div>
       <div>
-        <CounterAppOne />
+        <CounterAppOne appState={counterAppState} />
       </div>
     </div>
   );

@@ -1,13 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
+import { GlobalStore } from "redux-micro-frontend";
+import { Actions } from "../store/actionEnums";
+import { IncrementCounter } from "../store/counterActions";
 
-const Counter = () => {
-  const [count, setCount] = useState(0);
+interface CounterProps {
+  appState: any;
+}
+
+const Counter: React.FC<CounterProps> = ({ appState }) => {
+  const [count, setCount] = useState(appState.count);
+
+  const incrementCounter = () => {
+    const globalStore = GlobalStore.Get();
+    globalStore.DispatchAction("CounterApp", IncrementCounter());
+    setCount(globalStore.GetGlobalState().CounterApp.count);
+  };
 
   return (
     <div>
       <p>{count}</p>
-      <Button onClick={() => setCount(count + 1)}>Click me</Button>
+      <Button onClick={incrementCounter}>Click me</Button>
     </div>
   );
 };
