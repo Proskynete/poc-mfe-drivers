@@ -11,7 +11,9 @@ const configureStore = (setterFunc: any): IGlobalStore => {
     Actions.INCREMENT_COUNTER,
   ]);
 
-  globalStore.SubscribeToGlobalState("CounterApp", (state) => { console.log({state}) })
+  globalStore.SubscribeToGlobalState("CounterApp", (state) => {
+    console.log({ state: state.CounterApp.count });
+  });
 
   return globalStore;
 };

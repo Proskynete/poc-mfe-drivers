@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { GlobalStore } from "redux-micro-frontend";
-import { Actions } from "../store/actionEnums";
 import { IncrementCounter } from "../store/counterActions";
 
 interface CounterProps {
